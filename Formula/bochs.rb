@@ -16,6 +16,12 @@ class Bochs < Formula
 
   depends_on "pkg-config" => :build
   depends_on "sdl2" => :recommended
+  
+  patch do
+    # TODO: update to merged version once PR is merged
+    url "https://raw.githubusercontent.com/joshdover/formula-patches/5dd3968d7d4959cd645b41ea83f252660c50dded/bochs/pointer_comp.patch"
+    sha256 "c3cb8f5f1d489719d57eadc51f3551ed9c4df45210fa624f1d22aca7a6bb6aba"
+  end
 
   # Fix pointer cast issue
   # https://sourceforge.net/p/bochs/patches/537/
